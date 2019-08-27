@@ -15,14 +15,7 @@ addCSSDeps <- function(x) {
   # CSS
   framework7_css <- "framework7.bundle.min.css"
   framework7_icons_css <- "framework7-icons.css"
-  custom_css <- "my-app.css"
-  # card extra elements
-  social_cards_css <- "social-cards.css"
-  card_img_css <- "card-img.css"
-  # swiper css
-  swiper_css <- "swiper.css"
-  # grid extra css
-  grid_css <- "grid-extra.css"
+  custom_css <- "my-app.min.css"
   # material icons
   material_icons_css <- "material-icons.css"
 
@@ -37,11 +30,7 @@ addCSSDeps <- function(x) {
         framework7_css,
         material_icons_css,
         custom_css,
-        framework7_icons_css,
-        social_cards_css,
-        card_img_css,
-        grid_css,
-        swiper_css
+        framework7_icons_css
       )
     )
   )
@@ -65,8 +54,7 @@ addJSDeps <- function() {
 
   # JS
   framework7_js <- paste0(depsPath, "framework7.bundle.min.js")
-  custom_js <- paste0(depsPath, "my-app.js")
-  fullScreen_js <- paste0(depsPath, "fullscreen.js")
+  custom_js <- paste0(depsPath, "my-app.min.js")
 
   shiny::tagList(
     shiny::singleton(
@@ -74,9 +62,6 @@ addJSDeps <- function() {
     ),
     shiny::singleton(
       shiny::tags$script(src = custom_js)
-    ),
-    shiny::singleton(
-      shiny::tags$script(src = fullScreen_js)
     )
   )
 }

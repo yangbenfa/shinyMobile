@@ -37,8 +37,7 @@ shinyApp(
         hairline = TRUE,
         shadow = TRUE,
         left_panel = TRUE,
-        right_panel = TRUE,
-        bigger = TRUE
+        right_panel = TRUE
       ),
       # recover the color picker input and update the text background
       # color accordingly.
