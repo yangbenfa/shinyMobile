@@ -78,14 +78,7 @@ f7InputsDeps <- function() {
       href = "framework7-4.5.0/input-bindings"
     ),
     package = "shinyF7",
-    script = c("sliderInputBinding.js",
-               "stepperInputBinding.js",
-               "toggleInputBinding.js",
-               "datePickerInputBinding.js",
-               "pickerInputBinding.js",
-               "colorPickerInputBinding.js",
-               "tabsInputBinding.js",
-               "dateInputBinding.js")
+    script = "shinyF7InputBindings.min.js"
   )
 }
 
