@@ -4,9 +4,19 @@
 \alias{f7Navbar}
 \title{Create a Framework7 Navbar}
 \usage{
-f7Navbar(..., subNavbar = NULL, title = NULL, subtitle = NULL,
-  hairline = TRUE, shadow = TRUE, bigger = FALSE,
-  transparent = FALSE, left_panel = FALSE, right_panel = FALSE)
+f7Navbar(
+  ...,
+  subNavbar = NULL,
+  title = NULL,
+  subtitle = NULL,
+  hairline = TRUE,
+  shadow = TRUE,
+  bigger = FALSE,
+  transparent = FALSE,
+  left_panel = FALSE,
+  right_panel = FALSE,
+  mainNav = TRUE
+)
 }
 \arguments{
 \item{...}{Slot for \link{f7SearchbarTrigger}. Not compatible with \link{f7Panel}.}
@@ -30,6 +40,8 @@ Only works if bigger is TRUE.}
 \item{left_panel}{Whether to enable the left panel. FALSE by default.}
 
 \item{right_panel}{Whether to enable the right panel. FALSE by default.}
+
+\item{mainNav}{Whether this is the main navbar of the app. Experimental...}
 }
 \description{
 Build a Framework7 Navbar

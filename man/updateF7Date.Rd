@@ -4,8 +4,7 @@
 \alias{updateF7Date}
 \title{Change the value of a date input on the client}
 \usage{
-updateF7Date(session, inputId, label = NULL, value = NULL,
-  placeholder = NULL)
+updateF7Date(session, inputId, label = NULL, value = NULL, placeholder = NULL)
 }
 \arguments{
 \item{session}{The session object passed to function given to the server.}

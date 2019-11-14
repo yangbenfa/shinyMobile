@@ -125,9 +125,21 @@ f7Init <- function(skin = c("ios", "md", "auto", "aurora"), theme = c("dark", "l
               globalTheme = ", theme, ";
               $html.removeClass('theme-dark theme-light').addClass('theme-' + globalTheme);
             }
-          }
+          },
+          routes: [
+            {
+              path: '/test/',
+              url: 'test.html',
+              keepAlive: true,
+            }
+          ],
         });
-        var mainView = app.views.create('.view-main');
+
+        var mainView = app.views.create('.view-main', {
+          url: '/',
+          pushState: true,
+          stackPages: true,
+        });
         app.methods.setLayoutTheme('", theme, "');
       "
         )
