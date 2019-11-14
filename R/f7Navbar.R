@@ -14,6 +14,7 @@
 #' Only works if bigger is TRUE.
 #' @param left_panel Whether to enable the left panel. FALSE by default.
 #' @param right_panel Whether to enable the right panel. FALSE by default.
+#' @param mainNav Whether this is the main navbar of the app. Experimental...
 #'
 #' @note Currently, bigger parameters does mess with the CSS.
 #'
@@ -22,7 +23,7 @@
 #' @export
 f7Navbar <- function(..., subNavbar = NULL, title = NULL, subtitle = NULL, hairline = TRUE,
                      shadow = TRUE, bigger = FALSE, transparent = FALSE, left_panel = FALSE,
-                     right_panel = FALSE) {
+                     right_panel = FALSE, mainNav = TRUE) {
 
    navbarClass <- "navbar"
    # bigger and transparent work together
@@ -68,6 +69,17 @@ f7Navbar <- function(..., subNavbar = NULL, title = NULL, subtitle = NULL, hairl
       shiny::tags$div(class = "navbar-bg"),
       shiny::tags$div(
          class = innerCl,
+         if (!mainNav) {
+            shiny::tags$div(
+               class = "left",
+               shiny::tags$a(
+                  href = "#",
+                  class = "link back",
+                  shiny::tags$i(class = "icon icon-back"),
+                  shiny::tags$span(class = "if-not-md", "Back")
+               )
+            )
+         },
          leftNav,
          if (bigger) {
             shiny::tagList(

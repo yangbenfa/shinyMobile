@@ -35,7 +35,7 @@ f7Link <- function(label = NULL, icon = NULL, src = NULL, external = FALSE) {
 
  shiny::a(
    href = src,
-   target = "_blank",
+   target = if (external) "_blank" else NULL,
    class = linkCl,
    if (!is.null(icon)) {
      shiny::tagList(
