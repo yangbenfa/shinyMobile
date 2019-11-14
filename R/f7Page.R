@@ -28,10 +28,11 @@ f7Page <- function(..., init = f7Init(skin = "auto", theme = "light"), title = N
           maximum-scale=1,
           minimum-scale=1,
           user-scalable=no,
+          minimal-ui,
           viewport-fit=cover"
       ),
 
-      # PAW properties
+      # PWA properties
       shiny::tags$meta(name = "apple-mobile-web-app-capable", content = "yes"),
       shiny::tags$meta(name = "apple-mobile-web-app-title", content = title),
       shiny::tags$meta(name = "apple-mobile-web-app-status-bar-style", content = "black-translucent"),
