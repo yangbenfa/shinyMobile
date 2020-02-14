@@ -8,6 +8,8 @@
 #' @param slidePerView Number of slides at a time. Only if pagination is TRUE. Set to "auto" by default.
 #' @param centered Whether to center slides. Only if pagination is TRUE.
 #' @param speed Slides speed. Numeric.
+#' @param direction Swiper direction. Choose between vertical and horizontal.
+#' Default to horizontal.
 #'
 #' @examples
 #' if(interactive()){
@@ -74,9 +76,9 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-f7Swiper <- function(..., id, spaceBetween = 50, slidePerView = "auto",
-                     centered = TRUE, speed = 400) {
-
+f7Swiper <- function(..., id, spaceBetween = 50, slidePerView = 1,
+                     centered = TRUE, speed = 400,
+                     direction = "horizontal") {
 
   # javascript init + options
   swiperJS <- shiny::singleton(
@@ -87,6 +89,7 @@ f7Swiper <- function(..., id, spaceBetween = 50, slidePerView = "auto",
             app.swiper.create('#", id, "', {
               speed: ", speed, ",
               spaceBetween: ", spaceBetween,",
+              direction: '", direction, "',
               slidesPerView: '", slidePerView,"',
               centeredSlides: ",  tolower(centered),",
               pagination: {'el': '.swiper-pagination'}

@@ -98,6 +98,8 @@ tabOthers <- f7Tab(
   f7BlockTitle(title = "f7Swiper") %>% f7Align(side = "center"),
   f7Swiper(
     id = "my-swiper",
+    direction = "vertical",
+    centered = TRUE,
     f7Slide(
       plot_ly(z = ~volcano, type = "contour")
     ),

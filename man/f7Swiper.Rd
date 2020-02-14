@@ -10,7 +10,8 @@ f7Swiper(
   spaceBetween = 50,
   slidePerView = "auto",
   centered = TRUE,
-  speed = 400
+  speed = 400,
+  direction = "horizontal"
 )
 }
 \arguments{
@@ -25,6 +26,9 @@ f7Swiper(
 \item{centered}{Whether to center slides. Only if pagination is TRUE.}
 
 \item{speed}{Slides speed. Numeric.}
+
+\item{direction}{Swiper direction. Choose between vertical and horizontal.
+Default to horizontal.}
 }
 \description{
 Build a Framework7 swiper (like carousel)
