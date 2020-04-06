@@ -5,7 +5,7 @@ $(function () {
     var tabLinks = $('a[href^="#"].tab-link');
     for (var i = 0; i < tabLinks.length; i++) {
       var temp = tabLinks[i].attr('href');
-      tabLinks[i].attr('href', temp.split('/')[1]);
+      $(tabLinks[i]).attr('href', temp.split('/')[1]);
     }
   }
 
