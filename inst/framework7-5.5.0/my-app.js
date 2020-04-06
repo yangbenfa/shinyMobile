@@ -2,7 +2,11 @@ $(function () {
   // handles shinyapps.io
   var workerId = $('base').attr('href');
   if (workerId) {
-    $('a[href^="#"].tab-link').attr('href', workerId + $('a[href^="#"].tab-link').attr('href'));
+    var tabLinks = $('a[href^="#"].tab-link');
+    for (var i = 0; i < tabLinks.length; i++) {
+      var temp = tabLinks[i].attr('href');
+      tabLinks[i].attr('href', temp.split('/')[1]);
+    }
   }
 
   // handle toolbar padding for mobiles in standalone mode
