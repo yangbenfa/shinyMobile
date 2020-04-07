@@ -2,9 +2,9 @@ $(function () {
   // handles shinyapps.io
   var workerId = $('base').attr('href');
   if (workerId) {
-    $('a[href^="#"].tab-link').on('click', function() {
+    $('a.tab-link').on('click', function() {
       var temp = $(this).attr('href');
-      $(this).attr('href', temp.split('/')[1]);
+      $(this).attr('href', '#' + temp.split('#')[1]);
     });
   }
 
