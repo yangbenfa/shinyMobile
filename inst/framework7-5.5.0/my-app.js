@@ -4,7 +4,9 @@ $(function () {
   if (workerId) {
     $('a.tab-link').on('click', function() {
       var temp = $(this).attr('href');
-      $(this).attr('href', '#' + temp.split('#')[1]);
+      setTimeout(function() {
+        $(this).attr('href', '#' + temp.split('#')[1]);
+      }, 100);
     });
   }
 
