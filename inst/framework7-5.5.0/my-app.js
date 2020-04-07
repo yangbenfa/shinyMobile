@@ -1,13 +1,11 @@
 $(function () {
   // handles shinyapps.io
   var workerId = $('base').attr('href');
+  // ensure that this code does not locally
   if (workerId) {
-    $('a.tab-link').on('click', function() {
-      var temp = $(this).attr('href');
-      setTimeout(function() {
-        $(this).attr('href', '#' + temp.split('#')[1]);
-      }, 100);
-    });
+    var pathname = window.location.pathname;
+    var newpath = pathname + workerId;
+    window.history.pushState( {} , 'newpath', newpath);
   }
 
   // handle toolbar padding for mobiles in standalone mode
