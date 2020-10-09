@@ -994,7 +994,11 @@ updateF7Select <- function(inputId, selected = NULL,
   session$sendInputMessage(inputId, message)
 }
 
-
+updateF7Radio <- function (inputId, label = NULL, choices = NULL,selected = NULL, session = shiny::getDefaultReactiveDomain())
+{
+message <- list(label = label, choices = choices,selected = selected)
+session$sendInputMessage(inputId, message)
+}
 
 #' Change the value of a smart select input on the client
 #'
