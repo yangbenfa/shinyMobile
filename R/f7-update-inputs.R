@@ -996,6 +996,11 @@ updateF7Select <- function(inputId, selected = NULL,
 
 
 
+updateF7Radio <- function (inputId, label = NULL, choices = NULL,selected = NULL, session = shiny::getDefaultReactiveDomain()) 
+{
+  message <- dropNulls(list(label = label, choices = choices,selected = selected))
+  session$sendInputMessage(inputId, message)
+}
 #' Change the value of a smart select input on the client
 #'
 #' @param inputId The id of the input object.
